@@ -11,6 +11,10 @@
         margin: 0;
         padding: 20px;
         background-color: #f0f0f0;
+        background-image: url("ruta-de-la-imagen.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
       }
 
       h2 {
@@ -46,7 +50,43 @@
         display: block;
         margin-top: 10px;
       }
+
+      h2,
+      p,
+      div {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+      }
+
+      .fade-in {
+        opacity: 1;
+        transform: translateY(0);
+      }
     </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        var elements = document.querySelectorAll("h2, p, div");
+        var fadeElements = Array.prototype.slice.call(elements);
+
+        function fadeInOnScroll() {
+          fadeElements.forEach(function (element) {
+            var elementTop = element.getBoundingClientRect().top;
+            var elementBottom = element.getBoundingClientRect().bottom;
+            var windowHeight = window.innerHeight;
+
+            if (elementTop < windowHeight && elementBottom >= 0) {
+              element.classList.add("fade-in");
+            } else {
+              element.classList.remove("fade-in");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", fadeInOnScroll);
+        fadeInOnScroll();
+      });
+    </script>
   </head>
 
   <body>
