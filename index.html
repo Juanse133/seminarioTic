@@ -9,36 +9,40 @@
       body {
         font-family: Arial, sans-serif;
         margin: 0;
-        padding: 20px;
-        background-color: #f0f0f0;
+        padding: 2rem;
+        background-color: #f8f9f9;
         background-image: url("./Mosquera.png");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
       }
 
+      h3,
       h2 {
-        color: #333;
+        color: rgb(3, 54, 61);
         margin-top: 20px;
         margin-bottom: 10px;
       }
 
-      p {
-        color: #666;
+      p,
+      li {
+        color: rgb(23, 73, 77);
         line-height: 1.5;
         margin-bottom: 20px;
       }
 
       div {
-        background-color: #fff;
-        padding: 20px;
+        background-color: rgb(248, 249, 249);
+        padding: 20px 5rem;
         margin-bottom: 20px;
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: justify;
       }
 
       ul,
-      ol {
+      ol,
+      li {
         margin-top: 0;
         margin-bottom: 20px;
         padding-left: 20px;
@@ -62,6 +66,63 @@
       .fade-in {
         opacity: 1;
         transform: translateY(0);
+      }
+
+      header {
+        background-color: #f1f1f1;
+        padding: 20px;
+        position: fixed;
+        z-index: 2;
+        top: 50%;
+        transform: translate(0, -50%);
+        right: -150px;
+        transition: right 0.2s ease-in-out;
+        border-radius: 50px 0 0 50px;
+        box-shadow: 0px 0px 50px 0.5px rgb(3, 54, 61);
+      }
+
+      header:hover {
+        right: 0;
+        transition: right 0.2s ease-in-out;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+
+      nav li {
+        margin-right: 20px;
+        padding: 0.5rem;
+        width: 100%;
+        text-align: right;
+      }
+
+      nav li:hover {
+        transform: translate(-5%, 0);
+      }
+
+      nav a {
+        text-decoration: none;
+        color: rgb(3, 54, 61);
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      #title {
+        text-align: center;
+        padding: 20px 5rem;
+      }
+
+      #obj div,
+      #ante div,
+      #pres div {
+        background-color: #d6eef2;
       }
     </style>
     <script>
@@ -90,14 +151,29 @@
   </head>
 
   <body>
-    <div>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#title">TÍTULO</a></li>
+          <li><a href="#res">RESUMEN</a></li>
+          <li><a href="#intro">INTRODUCCIÓN</a></li>
+          <li><a href="#ante">ANTECEDENTES</a></li>
+          <li><a href="#prob">PROBLEMA</a></li>
+          <li><a href="#obj">OBJETIVOS</a></li>
+          <li><a href="#pres">PRESUPUESTO</a></li>
+          <li><a href="#cron">CRONOGRAMA </a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="title">
       <h2>TÍTULO</h2>
       <p>
         Proyecto para la mejora de la movilidad basado en la implementación de
         IoT en Mosquera, Cundinamarca.
       </p>
     </div>
-    <div>
+    <div id="res">
       <h2>RESUMEN</h2>
       <p>
         El presente proyecto busca señalar y comprender las necesidades
@@ -117,7 +193,7 @@
         imprudentes.
       </p>
     </div>
-    <div>
+    <div id="intro">
       <h2>INTRODUCCIÓN</h2>
       <p>
         Esta propuesta tiene como objetivo mejorar la calidad de vida de los
@@ -135,7 +211,7 @@
         habitable y segura para sus habitantes.
       </p>
     </div>
-    <div>
+    <div id="ante">
       <h2>ANTECEDENTES</h2>
       <p>
         La alcaldía de Mosquera propuso el plan “Nos MOVEMOS hacia el futuro”,
@@ -166,7 +242,7 @@
         <img src="./avanceTotal.png" alt="Avance total del plan de movilidad" />
       </div>
     </div>
-    <div>
+    <div id="prob">
       <h2>PROBLEMA</h2>
       <p>
         Mosquera es un municipio de Cundinamarca que ha experimentado un
@@ -197,7 +273,7 @@
         vial?
       </p>
     </div>
-    <div>
+    <div id="obj">
       <h2>OBJETIVOS</h2>
       <div>
         <h3>OBJETIVO GENERAL</h3>
@@ -237,7 +313,7 @@
         </ol>
       </div>
     </div>
-    <div>
+    <div id="pres">
       <h2>PRESUPUESTO</h2>
       <div>
         <h3>Planificación del proyecto:</h3>
@@ -336,7 +412,7 @@
         </ul>
       </div>
     </div>
-    <div>
+    <div id="cron">
       <h2>CRONOGRAMA</h2>
       <img src="./cronograma.png" alt="Cronograma" />
     </div>
